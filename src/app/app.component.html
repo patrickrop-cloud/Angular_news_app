@@ -1,0 +1,44 @@
+<!-- <h1>Home works!</h1> -->
+  
+    <mat-toolbar color="primary">
+      <button  mat-icon-button class="icon">
+        <mat-icon  (click)="this.sideNav.open()" *ngIf="!sideNav.opened" class="mat-18">menu</mat-icon>
+        <mat-icon (click)="this.sideNav.close()" *ngIf="sideNav.opened" class="mat-18"  >close</mat-icon>
+      </button>
+      <span>News App</span>
+    </mat-toolbar>
+  <mat-sidenav-container >
+    <mat-sidenav #sideNav="matSidenav">
+      <img src="https://cdn-icons-png.flaticon.com/512/653/653021.png" alt="" class="avatar mat-elevation-z6" style="width: auto; height: 80px;">
+      <h5>News App</h5>
+      <mat-divider></mat-divider>
+      <ng-container *ngFor="let source of sources">
+        <button  mat-button class="menu">
+          <mat-icon >event_note</mat-icon>
+          <span >{{source.name}}</span>
+        </button>
+      </ng-container>
+      
+    </mat-sidenav>
+    <mat-sidenav-content class="container">
+      <ng-container *ngFor="let article of articles">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" [src]="article.urlToImage" style="width: 350px; " alt="Card image cap">
+          <h4>Date: {{article.publishedAt | date:'medium'}}</h4>
+          <div class="card-body">
+            <h3 class="card-title">Title:{{article.title}}</h3>
+            <h4>Author:{{article.author}}</h4>
+            <!-- <h4>country:{{article.country}}</h4> -->
+            <p class="card-text" [innerHtml]="article.description" ></p>
+            
+            <a mat-button href="{{article.url}}" color="primary">Read More...</a>
+          </div>
+        </div>
+      </ng-container>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+    
+
+
+
+
