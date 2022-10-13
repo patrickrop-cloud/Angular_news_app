@@ -12,7 +12,6 @@
     <mat-sidenav #sideNav="matSidenav">
       <img src="https://cdn-icons-png.flaticon.com/512/653/653021.png" alt="" class="avatar mat-elevation-z6" style="width: auto; height: 80px;">
       <h5>News App</h5>
-      <!-- <mat-divider></mat-divider> -->
       <ng-container *ngFor="let source of sources">
         <button (click)="searchSource(source)"  mat-button class="menu">
           <mat-icon >event_note</mat-icon>

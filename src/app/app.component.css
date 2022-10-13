@@ -44,4 +44,5 @@ mat-divider {
     height: 100%;
     justify-content: flex-start;
     align-items: flex-start;
+    font-size: 0.8rem;
   }
