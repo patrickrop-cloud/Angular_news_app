@@ -1,0 +1,83 @@
+<!-- <h1>Home works!</h1> -->
+  
+    <mat-toolbar color="primary">
+      <button  mat-icon-button class="icon" aria-label="icon">
+        <mat-icon  (click)="this.sideNav.open()" *ngIf="!sideNav?.opened" class="mat-6">menu</mat-icon>
+        <mat-icon (click)="this.sideNav.close()" *ngIf="sideNav?.opened" >close</mat-icon>
+      </button>
+      <span>News App</span>
+    </mat-toolbar>
+
+  <mat-sidenav-container >
+    <mat-sidenav #sideNav="matSidenav">
+      <img src="https://cdn-icons-png.flaticon.com/512/653/653021.png" alt="" class="avatar mat-elevation-z6" style="width: auto; height: 80px;">
+      <h5>News App</h5>
+      <ng-container *ngFor="let source of sources">
+        <button (click)="searchSource(source)"  mat-button class="menu">
+          <mat-icon >event_note</mat-icon>
+          <span >{{source.name}}</span>
+        </button>
+      </ng-container>
+
+      <mat-divider></mat-divider>
+      <button mat-button class="menu">
+        <mat-icon>settings</mat-icon>
+        <span>Settings</span>
+      </button>
+    
+    </mat-sidenav>
+    <mat-sidenav-content class="content mat-elevation-z4">
+      <!-- <section class="text-gray-600 bg-gray-100 body-font"> -->
+        <!-- <div class="container px-5 mx-auto max-w-7x1"> -->
+          <!-- <div class="flex flex-wrap w-full mb-4 p-4"> -->
+            <!-- <div class="w-full mb-6 lg:mb-0"> -->
+              <h1 class="sm:text-4xl text-5xl font-medium title-font mb-2 text-gray-900">{{selectedNewsChannel}}</h1>
+   
+          <div class="flex">
+            <ng-container *ngFor="let article of articles">
+              <div class="row">
+                  <div class="card">
+                    <img class="card-img-top" [src]="article.urlToImage" style="width: 100%; " alt="Card image cap">
+                    
+                      <h5 class="card-title" style="color: black;">Date: {{article.publishedAt | date:'medium'}}</h5>
+                      <h5 style="color: black;">Author:{{article.author}}</h5>
+                      <!-- <h4 style="color: black;">Date: {{article.publishedAt | date:'medium'}}</h4> -->
+                <div class="card-body" style="width: 100%;">
+                  <div>
+                    <h3 class="card-title" style="color: black;" >Title:{{article.title}}</h3>
+                  
+                  </div>
+                  <p class="card-text" style="color: black;" [innerHtml]="article.description" >
+                  </p>
+                  <a mat-button href="{{article.url}}" color="primary">Read More...</a>
+                </div>
+              </div>
+              </div>
+              
+            </ng-container>
+           
+            <!-- <ng-container *ngFor="let article of articles">
+              <div class="card" style="width: 8rem;">
+                <img class="card-img-top" [src]="article.urlToImage" style="width: 350px; " alt="Card image cap">
+                <h4>Date: {{article.publishedAt | date:'medium'}}</h4>
+                <div class="card-body" style="width: 380%;">
+                  <h3 class="card-title" style="color: red;" >Title:{{article.title}}</h3>
+                  <h4>Author:{{article.author}}</h4>
+                  
+                  <p class="card-text" [innerHtml]="article.description" ></p>
+                  
+                  <a mat-button href="{{article.url}}" color="primary">Read More...</a>
+                </div>
+              </div>
+            </ng-container> -->
+          </div>
+      
+     
+  <!-- </section> -->
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+    
+
+
+
+
