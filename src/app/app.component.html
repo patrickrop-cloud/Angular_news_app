@@ -36,24 +36,25 @@
           <div class="flex">
             <ng-container *ngFor="let article of articles">
               <div class="row">
-                  <div class="card">
-                    <img class="card-img-top" [src]="article.urlToImage" style="width: 100%; " alt="Card image cap">
+                  <div class="card col-md-3">
+                    <img class="card-img" [src]="article.urlToImage" alt="Card image cap">
                     
                       <h5 class="card-title" style="color: black;">Date: {{article.publishedAt | date:'medium'}}</h5>
                       <h5 style="color: black;">Author:{{article.author}}</h5>
                       <!-- <h4 style="color: black;">Date: {{article.publishedAt | date:'medium'}}</h4> -->
                 <div class="card-body" style="width: 100%;">
-                  <div>
-                    <h3 class="card-title" style="color: black;" >Title:{{article.title}}</h3>
-                  
-                  </div>
-                  <p class="card-text" style="color: black;" [innerHtml]="article.description" >
-                  </p>
-                  <a mat-button href="{{article.url}}" color="primary">Read More...</a>
+              
+                    <h3  class="card-title" style="color: blue;" >{{article.title}}</h3>
+                    <div class="para">
+                      <p class="card-text" [innerHtml]="article.description" >
+                      </p>
+                    </div>
+                    <div>
+                      <a mat-button href="{{article.url}}" color="primary">Read More...</a>
+                    </div>
                 </div>
               </div>
-              </div>
-              
+              </div>  
             </ng-container>
            
             <!-- <ng-container *ngFor="let article of articles">

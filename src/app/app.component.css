@@ -1,6 +1,6 @@
-.example-spacer {
-    flex: 1 1 auto;
-  }
+/* .example-spacer {
+    flex: 1 1 auto; */
+  
 .menu{
   width: 100%;
   display: flex;
@@ -26,23 +26,39 @@ mat-divider {
   margin: 20px 0px;
   background-color: #fff;
 }
-  /* .example-container {
-    width: 400px;
-    height: 200px;
-    margin: 10px;
-    border: 1px solid #555;
-  } */
-  /* .card{
-    display: block;
-    
-  } */
-
   .flex{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     width: 100%;
     height: 100%;
     justify-content: flex-start;
     align-items: flex-start;
     font-size: 0.8rem;
+    /* background-color: aqua; */
+
   }
+.col-md-3{
+  width: 350px;
+  height: 500px;
+  margin: 20px;
+  border: 5px salmon;
+}
+.card>.card-body>.para{
+  overflow: hidden;
+  color: black;
+  /* height: 100%; */
+  /* background-color: pink; */
+
+}
+.row .card .card-img{
+  width: 350px;
+  height: 200px;
+  margin-left: -13px;
+}
+.h1 .h3 .h5{
+  font-weight: 900;
+  /* font-style: italic;
+  text-align: center; */
+
+}
